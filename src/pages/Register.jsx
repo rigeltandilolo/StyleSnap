@@ -1,5 +1,3 @@
-import React from "react";
-
 const Register = () => {
   return (
     <div className="min-h-screen bg-white px-6 py-8">

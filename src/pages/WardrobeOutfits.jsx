@@ -1,25 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import '/src/index.css';
-import image1 from '../../public/VectorImage/contoh outfit 1.png';
-import image2 from '../../public/VectorImage/contoh outfit 2.png';
 
 const outfits = [
   {
     id: 1,
-    image: image1, //foto hasil mix and match Ai dan swipe clothes
+    image: 'VectorImage/contoh outfit 1.png',
   },
   {
     id: 2,
-    image: image2, //foto hasil mix and match Ai dan swipe clothes
+    image: 'VectorImage/contoh outfit 2.png',
   },
   {
     id: 3,
-    image: image1, //foto hasil mix and match Ai dan swipe clothes
+    image: 'VectorImage/contoh outfit 1.png',
   },
   {
     id: 4,
-    image: image2, //foto hasil mix and match Ai dan swipe clothes
+    image: 'VectorImage/contoh outfit 2.png',
   },
 ];
 
