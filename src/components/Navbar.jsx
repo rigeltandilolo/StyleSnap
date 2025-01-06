@@ -28,7 +28,7 @@ const Navbar = () => {
 
     // Navigate to AiMatchPage if 'AiMatch' is clicked
     if (itemId === "AiMatch") {
-      navigate("/ai-match"); // Navigate to AI Match page
+      navigate("/matching"); // Navigate to AI Match page
     }
   };
 

@@ -22,4 +22,8 @@ export const router = createBrowserRouter([
     path: "/register",
     element: <Register />,
   },
+  {
+    path: '/matching',
+    element: <AiMatchPage />
+  }
 ])
