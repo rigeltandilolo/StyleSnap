@@ -1,25 +1,34 @@
-import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import Home from '../pages/Home';
 import OnboardingScreen from '../pages/OnboardingPage';
 import LoginScreen from '../pages/LoginScreen';
-import Home from '../pages/Home';
+import Register from "../pages/Register";
+import AiMatchPage from "../pages/Ai";
 import Outfits from '../pages/WardrobeOutfits';
 
 export const router = createBrowserRouter([
   {
-    path: '/OnboardingPage',
-    element: <OnboardingScreen />, //onboarding
-  },
-  {
-    path: '/LoginScreen',
-    element: <LoginScreen />, //LoginScreen
-  },
-  {
-    path: '/WardrobeOutfits',
-    element: <Outfits />, //LoginScreen
-  },
-  {
     path: '/',
-    element: <Home />, //Home
+    element: <Home />,
   },
-]);
+  {
+    path: '/onboarding',
+    element: <OnboardingScreen />
+  },
+  {
+    path: '/login',
+    element: <LoginScreen />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: '/matching',
+    element: <AiMatchPage />
+  },
+  {
+    path: '/outfit',
+    element: <Outfits />,
+  },
+])
