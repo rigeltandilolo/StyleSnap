@@ -1,20 +1,25 @@
-import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
+import { createBrowserRouter } from 'react-router-dom';
+import Home from '../pages/Home';
+import OnboardingScreen from '../pages/OnboardingPage';
+import LoginScreen from '../pages/LoginScreen';
 import Register from "../pages/Register";
-import AiMatchPage from "../pages/Ai"; // Import the new AI Match page
+import AiMatchPage from "../pages/Ai";
 
-// Define the routes for the app
 export const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Home />, // Home page as the root path
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/onboarding',
+    element: <OnboardingScreen />
+  },
+  {
+    path: '/login',
+    element: <LoginScreen />,
   },
   {
     path: "/register",
-    element: <Register />, // Register page accessible at /register
+    element: <Register />,
   },
-  {
-    path: "/ai-match", // AI Match page route
-    element: <AiMatchPage />, // AI Match page component
-  },
-]);
+])
