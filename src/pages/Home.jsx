@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0); // Main tab state
   const [activeClothesTab, setActiveClothesTab] = useState(0); // Nested clothes tab state
+  const [isPopupVisible, setIsPopupVisible] = useState(false); // Popup state
 
   const mainTabs = [
     { id: 0, title: "Clothes", content: "Clothes Section" },
@@ -147,16 +148,39 @@ const Home = () => {
         </div>
       </div>
 
-     {/* Floating Plus Button */}
-{activeTab === 0 && (
-  <button
-    className="fixed right-6 top-[85%] transform -translate-y-1/2 w-16 h-16 bg-[#2c4214] text-white rounded-full shadow-lg flex items-center justify-center text-2xl"
-    style={{ zIndex: 1000 }}
-    onClick={() => alert("Plus Button Clicked!")}
-  >
-    +
-  </button>
-)}
+      {/* Floating Plus Button */}
+      {activeTab === 0 && (
+        <button
+          className="fixed right-6 top-[85%] transform -translate-y-1/2 w-16 h-16 bg-[#2c4214] text-white rounded-full shadow-lg flex items-center justify-center text-2xl"
+          style={{ zIndex: 1000 }}
+          onClick={() => setIsPopupVisible(true)}
+        >
+          +
+        </button>
+      )}
+
+      {/* Popup */}
+      {isPopupVisible && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          onClick={() => setIsPopupVisible(false)} // Close popup on background click
+        >
+          <div
+            className="bg-white rounded-lg p-6"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the popup
+          >
+            <div className="flex flex-col gap-4">
+              <button className="flex items-center gap-2">
+                <span>📂</span> Add clothes from library
+              </button>
+              <button className="flex items-center gap-2">
+                <span>📸</span> Take photo of clothes
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Navbar */}
       <Navbar />
     </div>
