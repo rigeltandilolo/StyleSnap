@@ -4,6 +4,7 @@ import OnboardingScreen from '../pages/OnboardingPage';
 import LoginScreen from '../pages/LoginScreen';
 import Register from "../pages/Register";
 import AiMatchPage from "../pages/Ai";
+import Outfits from '../pages/WardrobeOutfits';
 
 export const router = createBrowserRouter([
   {
@@ -21,5 +22,13 @@ export const router = createBrowserRouter([
   {
     path: "/register",
     element: <Register />,
+  },
+  {
+    path: '/matching',
+    element: <AiMatchPage />
+  },
+  {
+    path: '/outfit',
+    element: <Outfits />,
   },
 ])

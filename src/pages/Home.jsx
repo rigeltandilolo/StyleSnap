@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
-import React from "react";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState(0); // Main tab state

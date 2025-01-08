@@ -1,3 +1,65 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.1); /* Top and bottom shadow */
+  position: fixed; /* Keeps the navbar at the bottom or top */
+  bottom: 0; /* Align to bottom */
+  width: 100%; /* Full width */
+  z-index: 100; /* Make sure it stays above other elements */
+}
+
+/* Navbar items */
+.navbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #a1a1a1;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-item.active {
+  color: #2c4214; /* Active state color (green) */
+  font-weight: bold;
+}
+
+.navbar-item:hover {
+  transform: scale(1.1); /* Slight hover effect */
+}
+
+/* Icon and label */
+.navbar-icon {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.navbar-label {
+  font-size: 14px;
+}

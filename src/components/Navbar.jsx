@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
-import "./Navbar.css"; // Import styles for the navbar
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   // State for managing the active menu
@@ -28,7 +27,7 @@ const Navbar = () => {
 
     // Navigate to AiMatchPage if 'AiMatch' is clicked
     if (itemId === "AiMatch") {
-      navigate("/ai-match"); // Navigate to AI Match page
+      navigate("/matching"); // Navigate to AI Match page
     }
   };
 
