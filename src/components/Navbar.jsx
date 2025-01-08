@@ -1,46 +1,32 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useNavbar } from "../store/useNavbar";
 
 const Navbar = () => {
-  // State for managing the active menu
-  const [active, setActive] = useState("Wardrobe");
-
-  // Instantiate the useNavigate hook
+  const { currentPage, setCurrentPage } = useNavbar(state => state)
   const navigate = useNavigate();
 
-  // Menu items data with PNG image paths
   const menuItems = [
-    { id: "Wardrobe", label: "Wardrobe", icon: "w.png", hoverIcon: "w2.png" },
-    { id: "AiMatch", label: "AI Match", icon: "v2.png", hoverIcon: "Vector.png" },
-    { id: "MixMatcher", label: "Mix Matcher", icon: "s2.png", hoverIcon: "s.png" },
-    { id: "Planner", label: "Planner", icon: "c2.png", hoverIcon: "c.png" },
+    { label: "Wardrobe", icon: "w.png", hoverIcon: "w2.png", route: '/' },
+    { label: "AI Match", icon: "v2.png", hoverIcon: "Vector.png", route: '/ai-match' },
+    { label: "Mix Matcher", icon: "s2.png", hoverIcon: "s.png", route: 'mix-matcher' },
+    { label: "Planner", icon: "c2.png", hoverIcon: "c.png", route: '/planner' },
   ];
 
-  // Function to handle active state on click
-  const handleClick = (itemId) => {
-    setActive(itemId);
-
-    // Navigate to Home page if 'Wardrobe' is clicked
-    if (itemId === "Wardrobe") {
-      navigate("/"); // Navigate to Home page
-    }
-
-    // Navigate to AiMatchPage if 'AiMatch' is clicked
-    if (itemId === "AiMatch") {
-      navigate("/matching"); // Navigate to AI Match page
-    }
+  const handleClick = (route) => {
+    setCurrentPage(route)
+    navigate(route)
   };
 
   return (
     <nav className="navbar">
-      {menuItems.map((item) => (
+      {menuItems.map((item, index) => (
         <div
-          key={item.id}
-          className={`navbar-item ${active === item.id ? "active" : ""}`}
-          onClick={() => handleClick(item.id)} // Set active state on click
+          key={index}
+          className={`navbar-item ${currentPage === item.route ? "active" : ""}`}
+          onClick={() => handleClick(item.route)}
         >
           <img
-            src={`/icons/${active === item.id ? item.icon : item.hoverIcon}`}  // Change icon based on active state
+            src={`/icons/${currentPage === item.route ? item.icon : item.hoverIcon}`}
             alt={item.label}
             className="navbar-icon"
           />
@@ -49,6 +35,6 @@ const Navbar = () => {
       ))}
     </nav>
   );
-};
+}
 
 export default Navbar;
