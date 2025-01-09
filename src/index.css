@@ -16,3 +16,23 @@
     opacity: 0;
     transition: opacity 300ms;
   }  
+
+  /* Bottom sheet transition styles */
+.slide-up-enter {
+  transform: translateY(100%);
+  opacity: 0;
+}
+.slide-up-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+.slide-up-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slide-up-exit-active {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}

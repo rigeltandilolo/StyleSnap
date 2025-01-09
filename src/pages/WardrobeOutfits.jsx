@@ -3,6 +3,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import '/src/index.css';
 import image1 from '../../public/VectorImage/contoh outfit 1.png';
 import image2 from '../../public/VectorImage/contoh outfit 2.png';
+import WardrobeHeader from '../components/WardrobeHeader';
+import WardrobeCollections from './WardrobeCollections';
 
 const outfits = [
   {
@@ -97,9 +99,7 @@ const Outfits = () => {
                 ))}
               </div>
             )}
-            {activeTab === 'Collections' && (
-              <p className="text-gray-500">Content for Collections</p>
-            )}
+            {activeTab === 'Collections' && <WardrobeCollections />}
           </div>
         </CSSTransition>
       </TransitionGroup>

@@ -4,6 +4,9 @@ import OnboardingScreen from '../pages/OnboardingPage';
 import LoginScreen from '../pages/LoginScreen';
 import Home from '../pages/Home';
 import Outfits from '../pages/WardrobeOutfits';
+import WardrobeCollections from '../pages/WardrobeCollections';
+import CollectionDetail from '../pages/CollectionsDetail';
+import SwipeClothes from '../pages/SwipeClothesPage';
 
 export const router = createBrowserRouter([
   {
@@ -12,11 +15,23 @@ export const router = createBrowserRouter([
   },
   {
     path: '/LoginScreen',
-    element: <LoginScreen />, //LoginScreen
+    element: <LoginScreen />, 
   },
   {
     path: '/WardrobeOutfits',
-    element: <Outfits />, //LoginScreen
+    element: <Outfits />, 
+  },
+  {
+    path: '/WardrobeCollections',
+    element: <WardrobeCollections />, 
+  },
+  {
+    path: '/CollectionDetail',
+    element: <CollectionDetail />, 
+  },
+  {
+    path: '/SwipeClothes',
+    element: <SwipeClothes />, 
   },
   {
     path: '/',

@@ -10,7 +10,7 @@ const LoginScreen = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-sm bg-white p-6 rounded-lg shadow-lg">
       <h2 className="text-xl font-bold text-left">Welcome Back!</h2>
-      <h1 className="text-base text-left mb-6 text-gray-200">Silahkan masuk dengan menggunakan akun
+      <h1 className="text-base text-left mb-6 text-gray-400">Silahkan masuk dengan menggunakan akun
       yang telah didaftarkan.</h1>
         <img src = {image1}/>
         <div className="flex justify-center mb-6">
