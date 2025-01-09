@@ -1,4 +1,4 @@
-const Card = () => {
+const Card = ({ image }) => {
   return (
     <div
       className="card bg-white rounded-lg p-2 mx-auto h-fit"
@@ -12,15 +12,12 @@ const Card = () => {
       {image && (
         <img
           src={image}
-          alt={title}
           className="w-full h-32 object-contain rounded-md"
           style={{
             objectFit: "contain",
           }}
         />
       )}
-      <div className="card-title text-sm font-semibold">{title}</div>
-      <div className="card-content text-gray-600 text-xs">{content}</div>
     </div>
   )
 }
