@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { useNavigate } from 'react-router-dom';
-import image1 from '../../public/VectorImage/Onboarding 1.png';
-import image2 from '../../public/VectorImage/Onboarding 2.png';
-import image3 from '../../public/VectorImage/Onboarding 3.png';
-import image4 from '../../public/VectorImage/Onboarding 4.png';
 
 const OnboardingScreen = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -14,22 +10,22 @@ const OnboardingScreen = () => {
     {
       title: 'Your Wardrobe, Your Way',
       description: 'Effortlessly organize your wardrobe with our smart grid system.',
-      image: image1,
+      image: 'VectorImage/Onboarding 1.png',
     },
     {
       title: 'AI-Powered Outfit Ideas',
       description: 'Discover AI-powered outfit recommendations tailored to your style.',
-      image: image2,
+      image: 'VectorImage/Onboarding 2.png',
     },
     {
       title: 'Get Creative',
       description: 'Shuffle your items clueless-style to create outfits. Keep clothes in play.',
-      image: image3,
+      image: 'VectorImage/Onboarding 3.png',
     },
     {
       title: 'Plan Outfits Daily',
       description: 'Plan your outfits ahead of time. Schedule your looks by day and stay ready for every occasion.',
-      image: image4,
+      image: 'VectorImage/Onboarding 4.png',
     },
   ];
 
@@ -66,9 +62,8 @@ const OnboardingScreen = () => {
         {onboardingData.map((_, index) => (
           <div
             key={index}
-            className={`h-2 flex-1 mx-1 rounded-full transition-all duration-500 ease-in-out ${
-              index <= currentStep ? 'bg-green-800' : 'bg-gray-300'
-            }`}
+            className={`h-2 flex-1 mx-1 rounded-full transition-all duration-500 ease-in-out ${index <= currentStep ? 'bg-green-800' : 'bg-gray-300'
+              }`}
           />
         ))}
       </div>

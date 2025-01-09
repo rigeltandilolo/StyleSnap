@@ -6,7 +6,8 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [react(), VitePWA({
     devOptions: {
-      enabled: true
+      enabled: true,
+      type: 'module'
     },
     strategies: 'injectManifest',
     srcDir: 'src',
@@ -23,19 +24,19 @@ export default defineConfig({
         src: '/android-chrome-192x192.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'favicon'
+        purpose: 'any'
       },
       {
         src: '/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'favicon'
+        purpose: 'any'
       },
       {
         src: '/apple-touch-icon.png',
         sizes: '180x180',
         type: 'image/png',
-        purpose: 'apple touch icon',
+        purpose: 'any',
       },
       {
         src: '/maskable-icon.png',
