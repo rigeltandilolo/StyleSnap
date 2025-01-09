@@ -59,16 +59,6 @@ const Home = () => {
         <div className="tab-content flex-shrink-0 w-full h-full">
           {displayActiveTab(activeTab)}
         </div>
-
-        {/* Outfits Section */}
-        <div className="tab-content flex-shrink-0 w-full h-full flex items-center justify-center text-lg font-bold">
-          {/* Add content here */}
-        </div>
-
-        {/* Collections Section */}
-        <div className="tab-content flex-shrink-0 w-full h-full flex items-center justify-center text-lg font-bold">
-          {/* Add content here */}
-        </div>
       </div>
 
       {/* Navbar */}
