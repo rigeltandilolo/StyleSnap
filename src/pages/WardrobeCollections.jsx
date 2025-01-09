@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
-import '/src/index.css';
 import { useNavigate } from "react-router-dom";
-import CollectionDetail from './CollectionsDetail';
 
 const WardrobeCollections = () => {
   const [collections, setCollections] = useState([
