@@ -4,7 +4,6 @@ import OnboardingScreen from '../pages/OnboardingPage';
 import LoginScreen from '../pages/LoginScreen';
 import Register from "../pages/Register";
 import AiMatchPage from "../pages/Ai";
-import Outfits from '../pages/WardrobeOutfits';
 import NotFound from '../pages/NotFound';
 
 export const router = createBrowserRouter([
@@ -27,10 +26,6 @@ export const router = createBrowserRouter([
   {
     path: '/ai-match',
     element: <AiMatchPage />
-  },
-  {
-    path: '/outfit',
-    element: <Outfits />,
   },
   {
     path: '*',
