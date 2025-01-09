@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import image1 from '../../public/body.png';
 import image2 from '../../public/bagicon.png';
@@ -110,7 +110,7 @@ const SwipeClothes = () => {
 
             {/* Siluet tubuh */}
             <div className="absolute top-10 left-1 z-0 opacity-30"
-            style={{ width: "400px", height: "700px" }}
+                style={{ width: "400px", height: "700px" }}
             >
                 <img
                     src={image1}
@@ -129,7 +129,7 @@ const SwipeClothes = () => {
                         className="absolute top-[100px] left-1/2 transform -translate-x-1/2 z-10" // z-index lebih tinggi dari Tops
                         style={{
                             clipPath: "inset(0 50% 0 0)", // Menampilkan hanya setengah bagian atas
-                            width: "340px", height: "340px" 
+                            width: "340px", height: "340px"
                         }}
                     >
                         <img
@@ -159,7 +159,7 @@ const SwipeClothes = () => {
                 <div
                     {...accessoryHandlers}
                     className="absolute top-[5%] left-1/2 transform -translate-x-1/2"
-                    style={{width: "110px", height: '110px'}}
+                    style={{ width: "110px", height: '110px' }}
                 >
                     <img
                         src={accessories[currentAccessory]}
@@ -172,7 +172,7 @@ const SwipeClothes = () => {
                 <div
                     {...topHandlers}
                     className="absolute top-24 left-1/2 transform -translate-x-1/2 "
-                    style={{width: "250px", height: '300px'}}
+                    style={{ width: "250px", height: '300px' }}
                 >
                     <img
                         src={tops[currentTop]}
@@ -185,7 +185,7 @@ const SwipeClothes = () => {
                 <div
                     {...bottomHandlers}
                     className="absolute top-[350px] left-1/2 transform -translate-x-1/2"
-                    style={{width: "400px", height: '400px'}}
+                    style={{ width: "400px", height: '400px' }}
                 >
                     <img
                         src={bottoms[currentBottom]}
@@ -198,7 +198,7 @@ const SwipeClothes = () => {
                 <div
                     {...footwearHandlers}
                     className="absolute top-[620px] left-1/2 transform -translate-x-1/2"
-                    style={{width: "180px", height: '180px'}}
+                    style={{ width: "180px", height: '180px' }}
                 >
                     <img
                         src={footwears[currentFootwear]}
@@ -213,12 +213,12 @@ const SwipeClothes = () => {
 
                 {/* Tombol Add Bag */}
                 <button
-                        onClick={() => setIsBagSelecting(true)}
-                        className="flex flex-col items-center justify-center w-20 h-20 bg-green-700 p-2 rounded-lg shadow-md"
-                    >
-                        <img src={image2} alt="Add Bag" className="w-8 h-8" />
-                        <span className="text-white text-xs mt-1">Add Bag</span>
-                    </button>
+                    onClick={() => setIsBagSelecting(true)}
+                    className="flex flex-col items-center justify-center w-20 h-20 bg-green-700 p-2 rounded-lg shadow-md"
+                >
+                    <img src={image2} alt="Add Bag" className="w-8 h-8" />
+                    <span className="text-white text-xs mt-1">Add Bag</span>
+                </button>
 
                 {/* Tombol Add Jacket */}
                 <button
