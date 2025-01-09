@@ -2,7 +2,6 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from '../pages/Home';
 import OnboardingScreen from '../pages/OnboardingPage';
 import LoginScreen from '../pages/LoginScreen';
-import Home from '../pages/Home';
 import Register from "../pages/Register";
 import AiMatchPage from "../pages/Ai";
 import NotFound from '../pages/NotFound';
