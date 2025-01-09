@@ -1,18 +1,13 @@
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import image1 from '../../public/body.png';
-import image2 from '../../public/bagicon.png';
-import image3 from '../../public/jacketicon.png';
-import image4 from '../../public/shuffleicon.png';
-import image5 from '../../public/saveiconpng.png';
 
 const SwipeClothes = () => {
-    const tops = ["../../public/ClothesImage/contohtops.png", "../../public/ClothesImage/contohtops2.png", "../../public/ClothesImage/contohtops3.png"];
-    const bottoms = ["../../public/ClothesImage/contohbottom.png", "../../public/ClothesImage/contohbottom2.png", "../../public/ClothesImage/contohbottom3.png"];
-    const footwears = ["../../public/ClothesImage/contohfootwear.png", "../../public/ClothesImage/contohfootwear2.png", "../../public/ClothesImage/contohfootwear3.png"];
-    const accessories = ["../../public/ClothesImage/contohtopi.png", "../../public/ClothesImage/contohtopi2.png", "../../public/ClothesImage/contohkacamata.png"];
-    const outers = ["../../public/ClothesImage/contohouter.png", "../../public/ClothesImage/contohouter2.png", "../../public/ClothesImage/contohouter3.png"];
-    const bags = ["../../public/ClothesImage/contohtas.png", "../../public/ClothesImage/contohtas2.png", "../../public/ClothesImage/contohtas3.png"];
+    const tops = ["ClothesImage/contohtops.png", "ClothesImage/contohtops2.png", "ClothesImage/contohtops3.png"];
+    const bottoms = ["ClothesImage/contohbottom.png", "ClothesImage/contohbottom2.png", "ClothesImage/contohbottom3.png"];
+    const footwears = ["ClothesImage/contohfootwear.png", "ClothesImage/contohfootwear2.png", "ClothesImage/contohfootwear3.png"];
+    const accessories = ["ClothesImage/contohtopi.png", "ClothesImage/contohtopi2.png", "ClothesImage/contohkacamata.png"];
+    const outers = ["ClothesImage/contohouter.png", "ClothesImage/contohouter2.png", "ClothesImage/contohouter3.png"];
+    const bags = ["ClothesImage/contohtas.png", "ClothesImage/contohtas2.png", "ClothesImage/contohtas3.png"];
 
     const [currentTop, setCurrentTop] = useState(0);
     const [currentBottom, setCurrentBottom] = useState(0);
@@ -97,7 +92,7 @@ const SwipeClothes = () => {
                 className="absolute top-4 right-4 bg-green-700 px-4 py-2 rounded-full shadow-md z-20 flex items-center gap-2"
                 title="Save Outfit"
             >
-                <img src={image5} alt="Save" className="w-[20px] h-[20px]" />
+                <img src="saveiconpng.png" alt="Save" className="w-[20px] h-[20px]" />
                 <span className="text-white text-sm font-medium">Save Outfit</span>
             </button>
 
@@ -113,7 +108,7 @@ const SwipeClothes = () => {
                 style={{ width: "400px", height: "700px" }}
             >
                 <img
-                    src={image1}
+                    src="body.png"
                     alt="Silhouette"
                     className="w-full h-full object-cover"
                 />
@@ -216,7 +211,7 @@ const SwipeClothes = () => {
                     onClick={() => setIsBagSelecting(true)}
                     className="flex flex-col items-center justify-center w-20 h-20 bg-green-700 p-2 rounded-lg shadow-md"
                 >
-                    <img src={image2} alt="Add Bag" className="w-8 h-8" />
+                    <img src="bagicon.png" alt="Add Bag" className="w-8 h-8" />
                     <span className="text-white text-xs mt-1">Add Bag</span>
                 </button>
 
@@ -225,7 +220,7 @@ const SwipeClothes = () => {
                     onClick={() => setIsOuterSelecting(true)}
                     className="flex flex-col items-center justify-center w-20 h-20 bg-green-700 p-2 rounded-lg shadow-md"
                 >
-                    <img src={image3} alt="Add Jacket" className="w-8 h-8" />
+                    <img src="jacketicon.png" alt="Add Jacket" className="w-8 h-8" />
                     <span className="text-white text-xs mt-1">Add Jacket</span>
                 </button>
 
@@ -234,7 +229,7 @@ const SwipeClothes = () => {
                     onClick={shuffleOutfit}
                     className="flex flex-col items-center justify-center w-20 h-20 bg-green-700 p-2 rounded-lg shadow-md"
                 >
-                    <img src={image4} alt="Shuffle" className="w-8 h-8" />
+                    <img src="shuffleicon.png" alt="Shuffle" className="w-8 h-8" />
                     <span className="text-white text-xs mt-1">Shuffle</span>
                 </button>
             </div>
