@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNavbar } from "../store/useNavbar";
 
@@ -5,16 +6,21 @@ const Navbar = () => {
   const { currentPage, setCurrentPage } = useNavbar(state => state)
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const route = window.location.pathname
+    setCurrentPage(route)
+  }, [])
+
   const menuItems = [
     { label: "Wardrobe", icon: "w.png", hoverIcon: "w2.png", route: '/' },
     { label: "AI Match", icon: "v2.png", hoverIcon: "Vector.png", route: '/ai-match' },
-    { label: "Mix Matcher", icon: "s2.png", hoverIcon: "s.png", route: 'mix-matcher' },
+    { label: "Mix Matcher", icon: "s2.png", hoverIcon: "s.png", route: '/mix-matcher' },
     { label: "Planner", icon: "c2.png", hoverIcon: "c.png", route: '/planner' },
   ];
 
   const handleClick = (route) => {
-    setCurrentPage(route)
     navigate(route)
+    setCurrentPage(route)
   };
 
   return (

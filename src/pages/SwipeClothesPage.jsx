@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import Navbar from "../components/Navbar";
 
 const SwipeClothes = () => {
     const tops = ["ClothesImage/contohtops.png", "ClothesImage/contohtops2.png", "ClothesImage/contohtops3.png"];
@@ -293,7 +294,7 @@ const SwipeClothes = () => {
                     </div>
                 </div>
             )}
-
+            <Navbar />
         </div>
     );
 };
