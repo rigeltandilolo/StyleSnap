@@ -5,6 +5,7 @@ import LoginScreen from '../pages/LoginScreen';
 import Register from "../pages/Register";
 import AiMatchPage from "../pages/Ai";
 import NotFound from '../pages/NotFound';
+import SwipeClothes from '../pages/SwipeClothesPage';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
   {
     path: '/ai-match',
     element: <AiMatchPage />
+  },
+  {
+    path: '/mix-matcher',
+    element: <SwipeClothes />
   },
   {
     path: '*',
