@@ -1,10 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Clothes from "./Clothes";
 import Outfits from "./Outfits";
+import { jwtDecode } from "jwt-decode";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('Clothes');
+  const [name, setName] = useState('Guest');
+
+  useEffect(() => {
+    const token = document.cookie.replace('session=', '')
+
+    if (token) {
+      const name = jwtDecode(token).firstName
+      setName(name)
+    }
+  }, [])
 
   const mainTabs = ['Clothes', 'Outfits', 'Collections'];
 
@@ -25,7 +36,7 @@ const Home = () => {
       <div className="header bg-[#2c4214] text-white p-4 flex justify-between items-center rounded-b-lg">
         <div className="welcome text-left">
           <p className="text-xs">Welcome Back,</p>
-          <p className="text-lg font-bold">Guest</p>
+          <p className="text-lg font-bold">{name}</p>
         </div>
         <div className="app-name text-lg font-bold">StyleSnap</div>
       </div>
