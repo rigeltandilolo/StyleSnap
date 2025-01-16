@@ -19,3 +19,17 @@ export const login = async ({ email, password }) => {
 
   return false
 }
+
+export const logout = async () => {
+  const response = await api.post('/logout')
+
+  if (response.status === 200) window.location.replace('/login',)
+}
+
+export const checkSession = () => {
+  const cookie = document.cookie
+
+  if (!cookie.includes('session')) {
+    window.location.href = '/login'
+  }
+}
