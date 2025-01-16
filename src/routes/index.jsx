@@ -5,6 +5,7 @@ import LoginScreen from '../pages/LoginScreen';
 import Register from "../pages/Register";
 import AiMatchPage from "../pages/Ai";
 import Outfits from '../pages/WardrobeOutfits';
+import Callender from '../pages/Callender';
 
 export const router = createBrowserRouter([
   {
@@ -31,4 +32,10 @@ export const router = createBrowserRouter([
     path: '/outfit',
     element: <Outfits />,
   },
+
+  {
+    path: '/callender',
+    element: <Callender />,
+  },
+
 ])

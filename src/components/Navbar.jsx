@@ -29,6 +29,11 @@ const Navbar = () => {
     if (itemId === "AiMatch") {
       navigate("/matching"); // Navigate to AI Match page
     }
+
+    if (itemId === "Planner") {
+      navigate("/callender"); // Navigate to AI Match page
+    }
+
   };
 
   return (

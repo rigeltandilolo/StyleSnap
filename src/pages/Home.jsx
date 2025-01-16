@@ -162,19 +162,29 @@ const Home = () => {
       {/* Popup */}
       {isPopupVisible && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 z-50"
           onClick={() => setIsPopupVisible(false)} // Close popup on background click
         >
           <div
-            className="bg-white rounded-lg p-6"
+            className="absolute bg-white rounded-lg p-3 shadow-lg"
+            style={{
+              top: "calc(77% - 2rem)", // Align vertically with the plus icon
+              right: "6rem", // Position the popup to the left of the plus button
+            }}
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the popup
           >
-            <div className="flex flex-col gap-4">
-              <button className="flex items-center gap-2">
-                <span>📂</span> Add clothes from library
+            <div className="flex flex-col">
+              <button className="flex items-center gap-1 ">
+                <img src="gallery.png" alt="Add clothes icon" className="w-5 h-5" />
+                Add clothes from library
               </button>
-              <button className="flex items-center gap-2">
-                <span>📸</span> Take photo of clothes
+
+              {/* Separator */}
+              <div className="w-full border-t border-gray-300 my-2"></div>
+
+              <button className="flex items-center gap-1">
+                <img src="camera.png" alt="Take photo icon" className="w-5 h-5" />
+                Take photo of clothes
               </button>
             </div>
           </div>
