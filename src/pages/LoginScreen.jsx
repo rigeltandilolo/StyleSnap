@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { login } from '../services/auth';
-import { useNavigate } from 'react-router-dom';
 
 const LoginScreen = () => {
   const [emailFocused, setEmailFocused] = useState(false);
@@ -9,8 +8,6 @@ const LoginScreen = () => {
     email: '',
     password: ''
   })
-
-  const navigate = useNavigate()
 
   const handleFormChange = (e) => {
     const { name, value } = e.target
@@ -28,7 +25,7 @@ const LoginScreen = () => {
       ...data
     })
 
-    if (response) navigate('/')
+    if (response) window.location.href = '/'
   }
 
   return (
