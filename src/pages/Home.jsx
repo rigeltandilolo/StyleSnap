@@ -3,12 +3,16 @@ import Navbar from "../components/Navbar";
 import Clothes from "./Clothes";
 import Outfits from "./Outfits";
 import { jwtDecode } from "jwt-decode";
+import { useNavbar } from "../store/useNavbar";
+import { checkSession, logout } from "../services/auth";
 
 const Home = () => {
   const [activeTab, setActiveTab] = useState('Clothes');
   const [name, setName] = useState('Guest');
+  const { hiddenNavbar } = useNavbar(state => state)
 
   useEffect(() => {
+    checkSession()
     const token = document.cookie.replace('session=', '')
 
     if (token) {
@@ -38,6 +42,7 @@ const Home = () => {
           <p className="text-xs">Welcome Back,</p>
           <p className="text-lg font-bold">{name}</p>
         </div>
+        <button onClick={() => logout()}>Logout</button>
         <div className="app-name text-lg font-bold">StyleSnap</div>
       </div>
 
@@ -73,7 +78,11 @@ const Home = () => {
       </div>
 
       {/* Navbar */}
-      <Navbar />
+      {
+        !hiddenNavbar && (
+          <Navbar />
+        )
+      }
     </div>
   );
 };
