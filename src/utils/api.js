@@ -4,14 +4,20 @@ const handleRequest = async (method, endpoint, data = null) => {
   try {
     const options = {
       method,
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: {},
       credentials: 'include',
     };
 
+    // If data is provided, check its type
     if (data) {
-      options.body = JSON.stringify(data);
+      if (data instanceof FormData) {
+        // Remove 'Content-Type' header to let the browser set it correctly for FormData
+        options.body = data;
+      } else {
+        // Default to JSON
+        options.headers['Content-Type'] = 'application/json';
+        options.body = JSON.stringify(data);
+      }
     }
 
     const response = await fetch(`${url}${endpoint}`, options);
@@ -22,12 +28,12 @@ const handleRequest = async (method, endpoint, data = null) => {
       );
     }
 
-    return response
+    return response;
   } catch (error) {
     console.error(`Error in ${method} request to ${endpoint}:`, error);
     throw error;
   }
-}
+};
 
 async function post(endpoint, data) {
   return await handleRequest('POST', endpoint, data);
