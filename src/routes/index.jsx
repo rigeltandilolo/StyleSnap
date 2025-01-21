@@ -6,6 +6,8 @@ import Register from "../pages/Register";
 import AiMatchPage from "../pages/Ai";
 import Outfits from '../pages/WardrobeOutfits';
 import Callender from '../pages/Callender';
+import NotFound from '../pages/NotFound';
+import SwipeClothes from '../pages/SwipeClothesPage';
 
 export const router = createBrowserRouter([
   {
@@ -25,17 +27,19 @@ export const router = createBrowserRouter([
     element: <Register />,
   },
   {
-    path: '/matching',
+    path: '/ai-match',
     element: <AiMatchPage />
   },
   {
-    path: '/outfit',
-    element: <Outfits />,
+    path: '/mix-matcher',
+    element: <SwipeClothes />
   },
-
   {
-    path: '/callender',
+    path: '/calendar',
     element: <Callender />,
   },
-
+  {
+    path: '*',
+    element: <NotFound />
+  }
 ])

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; // Swiper styles
 import Navbar from "../components/Navbar";
 
 const AiMatchPage = () => {
@@ -59,9 +58,8 @@ const InputSection = ({
         placeholder="Planning a look? Describe it here!"
         value={inputValue}
         onChange={handleInputChange}
-        className={`flex-grow p-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2c4214] ${
-          inputValue ? "font-semibold" : ""
-        }`}
+        className={`flex-grow p-3 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-[#2c4214] ${inputValue ? "font-semibold" : ""
+          }`}
       />
       <button
         className="w-12 h-12 bg-[#2c4214] text-white rounded-lg flex items-center justify-center"
@@ -133,9 +131,8 @@ const CardSwiper = () => {
         {[0, 1, 2].map((index) => (
           <div
             key={index}
-            className={`w-6 h-6 mx-2 rounded-full flex items-center justify-center text-white font-semibold ${
-              currentSlide === index ? "bg-[#2c4214]" : "bg-gray-300"
-            }`}
+            className={`w-6 h-6 mx-2 rounded-full flex items-center justify-center text-white font-semibold ${currentSlide === index ? "bg-[#2c4214]" : "bg-gray-300"
+              }`}
           >
             {index + 1}
           </div>
